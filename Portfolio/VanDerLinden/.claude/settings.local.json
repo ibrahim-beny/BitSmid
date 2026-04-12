@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -L -o \"/Users/ibrahimben/Bitbreez2/Portfolio/VanDerLinden/images/over-ons-team.jpg\" \"https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=900&q=80\" -w \"%{http_code}\" -s)",
+      "Bash(curl -L -o \"/Users/ibrahimben/Bitbreez2/Portfolio/VanDerLinden/images/bestrating-terras.jpg\" \"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80\" -w \"%{http_code}\" -s)",
+      "Bash(curl -L -o \"/Users/ibrahimben/Bitbreez2/Portfolio/VanDerLinden/images/galerij-tuin1.jpg\" \"https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1000&q=80\" -w \"%{http_code}\" -s)",
+      "Bash(curl -L -o \"/Users/ibrahimben/Bitbreez2/Portfolio/VanDerLinden/images/galerij-tuin2.jpg\" \"https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1000&q=80\" -w \"%{http_code}\" -s)",
+      "Bash(curl -L -o \"/Users/ibrahimben/Bitbreez2/Portfolio/VanDerLinden/images/galerij-heg.jpg\" \"https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?w=1000&q=80\" -w \"%{http_code}\" -s)",
+      "WebFetch(domain:unsplash.com)",
+      "WebSearch",
+      "Bash(curl -s \"https://unsplash.com/oembed?url=https://unsplash.com/photos/AqCTAOMJUVk\")",
+      "Bash(curl -sv \"https://unsplash.com/oembed?url=https://unsplash.com/photos/AqCTAOMJUVk\")",
+      "Bash(curl -s -A \"Mozilla/5.0\" \"https://unsplash.com/oembed?url=https://unsplash.com/photos/AqCTAOMJUVk\")",
+      "WebFetch(domain:splashfinder.app)"
+    ]
+  }
+}

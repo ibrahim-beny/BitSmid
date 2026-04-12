@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diensten | Steenstraters Bestrating</title>
+    <meta name="description"
+        content="Ontdek onze diensten: oprit bestrating, terras aanleg, tuinpaden, sierbestrating en meer. Steenstraters, uw betrouwbare partner.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=3">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .service-page-header {
+            background: linear-gradient(rgba(44, 53, 57, 0.8), rgba(44, 53, 57, 0.8)), url('images/services/patio.png') center/cover;
+            padding: 8rem 0 4rem;
+            color: white;
+            text-align: center;
+        }
+
+        .service-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 5rem;
+            align-items: center;
+        }
+
+        .service-img img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-item:nth-child(even) .service-img {
+            order: 2;
+        }
+
+        .service-item:nth-child(even) .service-text {
+            order: 1;
+        }
+
+        @media (max-width: 768px) {
+            .service-item {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .service-item:nth-child(even) .service-img,
+            .service-item:nth-child(even) .service-text {
+                order: unset;
+            }
+        }
+
+        .benefit-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .benefit-list li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .benefit-list i {
+            color: var(--color-accent);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation (Same as index.html) -->
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="Steenstraters"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="diensten.html" class="active">Diensten</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="over-ons.html">Over Ons</a></li>
+                <li><a href="werkwijze.html">Werkwijze</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="service-page-header">
+        <div class="container" data-aos="fade-up" data-aos-duration="1000">
+            <h1 style="font-size: 3rem; color: white;">Onze Diensten</h1>
+            <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto;">Professionele bestrating voor elke
+                buitenruimte. Van strakke opritten tot sfeervolle terrassen, wij realiseren uw wensen met vakmanschap.
+            </p>
+        </div>
+    </div>
+
+    <section class="section-padding">
+        <div class="container">
+
+            <!-- Service 1 -->
+            <div class="service-item" id="oprit">
+                <div class="service-img" data-aos="fade-right">
+                    <img src="images/services/driveway.png" alt="Oprit Bestrating"
+                        >
+                </div>
+                <div class="service-text" data-aos="fade-left">
+                    <h2 style="font-size: 2.2rem;">Oprit Bestrating</h2>
+                    <p>Een oprit is het visitekaartje van uw woning en wordt dagelijks zwaar belast door voertuigen. Wij
+                        zorgen voor een sterke fundering en vakkundig gelegde stenen die verzakking voorkomen en
+                        jarenlang mooi blijven.</p>
+                    <ul class="benefit-list">
+                        <li><i class="fa-solid fa-check"></i> Bestand tegen zware belasting</li>
+                        <li><i class="fa-solid fa-check"></i> Ruime keuze uit klinkers en tegels</li>
+                        <li><i class="fa-solid fa-check"></i> Perfecte afwatering</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-item" id="terras">
+                <div class="service-img" data-aos="fade-left">
+                    <img src="images/services/patio.png" alt="Terras Aanleg"
+                        >
+                </div>
+                <div class="service-text" data-aos="fade-left">
+                    <h2 style="font-size: 2.2rem;">Terras Aanleg</h2>
+                    <p>Geniet van het buitenleven met een prachtig terras. Of u nu kiest voor grote keramische tegels,
+                        natuursteen of beton, wij realiseren een strak en duurzaam resultaat dat perfect past bij uw
+                        tuin en woning.</p>
+                    <ul class="benefit-list">
+                        <li><i class="fa-solid fa-check"></i> Vorstbestendige materialen</li>
+                        <li><i class="fa-solid fa-check"></i> Naadloze overgang van binnen naar buiten</li>
+                        <li><i class="fa-solid fa-check"></i> Onderhoudsvriendelijke opties</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-item" id="tuinpaden">
+                <div class="service-img" data-aos="fade-right">
+                    <img src="images/services/path.png" alt="Tuinpaden"
+                        >
+                </div>
+                <div class="service-text" data-aos="fade-left">
+                    <h2 style="font-size: 2.2rem;">Tuinpaden & Looptrajecten</h2>
+                    <p>Verbind de verschillende elementen in uw tuin met stijlvolle tuinpaden. Van strak lineair tot
+                        organisch en speels; wij denken mee over de routing en de juiste materialen.</p>
+                    <ul class="benefit-list">
+                        <li><i class="fa-solid fa-check"></i> Vaste grond onder de voeten</li>
+                        <li><i class="fa-solid fa-check"></i> Visuele verbetering van uw tuin</li>
+                        <li><i class="fa-solid fa-check"></i> Combinatie met groen mogelijk</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="service-item" id="sierbestrating">
+                <div class="service-img" data-aos="fade-left">
+                    <img src="images/services/decorative.png" alt="Sierbestrating"
+                        >
+                </div>
+                <div class="service-text" data-aos="fade-left">
+                    <h2 style="font-size: 2.2rem;">Sierbestrating</h2>
+                    <p>Geef uw buitenruimte een uniek karakter met sierbestrating. Met diverse legverbanden (zoals
+                        visgraat of elleboog), kleuren en structuren creëren wij ware kunstwerken rondom uw huis.</p>
+                    <ul class="benefit-list">
+                        <li><i class="fa-solid fa-check"></i> Maatwerk legpatronen</li>
+                        <li><i class="fa-solid fa-check"></i> Hoge esthetische waarde</li>
+                        <li><i class="fa-solid fa-check"></i> Zorgvuldig uitgedacht kleurgebruik</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta section-padding"
+        style="background-color: var(--color-accent); color: var(--color-white); text-align: center;">
+        <div class="container">
+            <h2 style="color: var(--color-white); margin-bottom: 2rem;">Wilt u advies over uw project?</h2>
+            <a href="contact.html" class="btn-primary"
+                style="background-color: var(--color-white); color: var(--color-accent);">Neem Contact Op</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container copyright" style="border: none; padding-top: 0;">
+            <p>&copy; 2026 Steenstraters. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, offset: 100 });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

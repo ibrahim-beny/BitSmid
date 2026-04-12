@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique Cafe Beans</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --brown-dark:  #1a0e08;
+            --brown:       #3b1f0f;
+            --gold:        #c49a6c;
+            --gold-light:  #e8c99a;
+            --cream:       #f7f2ec;
+            --cream-light: #fdfaf6;
+            --text:        #2d1a0d;
+            --text-muted:  #7a5c44;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            background: var(--cream-light);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* ───── NAV ───── */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 22px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.4s, padding 0.4s;
+        }
+        nav.scrolled {
+            background: var(--brown-dark);
+            padding: 16px 60px;
+        }
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #fff;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--gold-light); }
+
+        /* ───── HERO ───── */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&q=80');
+            background-size: cover;
+            background-position: center 60%;
+            transform: scale(1.05);
+            transition: transform 8s ease;
+        }
+        .hero-bg.loaded { transform: scale(1); }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(15,7,3,0.92) 0%,
+                rgba(15,7,3,0.5) 40%,
+                rgba(15,7,3,0.1) 100%
+            );
+        }
+        .hero-content {
+            position: relative;
+            padding: 0 60px 80px;
+            max-width: 800px;
+        }
+        .hero-eyebrow {
+            display: inline-block;
+            color: var(--gold);
+            font-size: 0.78rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 6vw, 5.5rem);
+            font-weight: 400;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+        .hero-content h1 em {
+            font-style: italic;
+            color: var(--gold-light);
+        }
+        .hero-content p {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            max-width: 480px;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+        .btn-primary {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--brown-dark);
+            padding: 14px 36px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            display: inline-block;
+            border: 1px solid rgba(255,255,255,0.4);
+            color: #fff;
+            padding: 14px 36px;
+            font-size: 0.82rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: border-color 0.3s, color 0.3s;
+            margin-left: 16px;
+        }
+        .btn-outline:hover {
+            border-color: var(--gold);
+            color: var(--gold-light);
+        }
+        .scroll-hint {
+            position: absolute;
+            bottom: 30px;
+            right: 60px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .scroll-line {
+            width: 40px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        /* ───── INTRO STRIP ───── */
+        .intro-strip {
+            background: var(--brown-dark);
+            padding: 28px 60px;
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            flex-wrap: wrap;
+        }
+        .intro-strip-item {
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.78rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .intro-strip-item strong {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--gold);
+            font-weight: 400;
+            letter-spacing: 0;
+            margin-bottom: 4px;
+        }
+
+        /* ───── ABOUT ───── */
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 600px;
+        }
+        .about-img {
+            background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=900&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .about-text {
+            background: var(--cream);
+            padding: 80px 72px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .section-label {
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+        .about-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 28px;
+            color: var(--brown);
+        }
+        .about-text p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.8;
+            font-weight: 300;
+            margin-bottom: 16px;
+        }
+        .about-text .divider {
+            width: 48px;
+            height: 2px;
+            background: var(--gold);
+            margin: 32px 0;
+        }
+        .about-quote {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--brown);
+            line-height: 1.6;
+        }
+
+        /* ───── MENU HIGHLIGHTS ───── */
+        .menu {
+            padding: 100px 60px;
+            background: var(--cream-light);
+        }
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 60px;
+        }
+        .menu-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 400;
+            color: var(--brown);
+            line-height: 1.1;
+        }
+        .menu-header a {
+            color: var(--gold);
+            font-size: 0.82rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 2px;
+            transition: color 0.3s;
+        }
+        .menu-header a:hover { color: var(--brown); }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        .menu-card {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            cursor: pointer;
+        }
+        .menu-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .menu-card:hover img { transform: scale(1.08); }
+        .menu-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15,7,3,0.88) 0%, transparent 50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 28px 24px;
+        }
+        .menu-card-tag {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 6px;
+        }
+        .menu-card-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #fff;
+            line-height: 1.2;
+        }
+        .menu-card-price {
+            margin-top: 8px;
+            font-size: 0.9rem;
+            color: var(--gold-light);
+        }
+
+        /* ───── STORY / PROCESS ───── */
+        .process {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 640px;
+        }
+        .process-text {
+            background: var(--brown);
+            padding: 80px 72px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .process-text .section-label { color: var(--gold-light); }
+        .process-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
+            font-weight: 400;
+            color: #fff;
+            line-height: 1.2;
+            margin-bottom: 40px;
+        }
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+        .process-step {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+        }
+        .step-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-style: italic;
+            color: var(--gold);
+            line-height: 1;
+            min-width: 40px;
+        }
+        .step-content h4 {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #fff;
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+        .step-content p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.6;
+            font-weight: 300;
+        }
+        .process-img {
+            background-image: url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=900&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* ───── GALLERY ROW ───── */
+        .gallery-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            height: 480px;
+        }
+        .gallery-row .gal-img {
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* ───── TESTIMONIAL ───── */
+        .testimonial {
+            background: var(--cream);
+            padding: 100px 60px;
+            text-align: center;
+        }
+        .testimonial blockquote {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.4rem, 2.5vw, 2rem);
+            font-style: italic;
+            color: var(--brown);
+            max-width: 760px;
+            margin: 0 auto 32px;
+            line-height: 1.5;
+        }
+        .testimonial cite {
+            font-size: 0.82rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+        .testimonial cite strong { color: var(--gold); }
+        .stars {
+            color: var(--gold);
+            font-size: 1.1rem;
+            margin-bottom: 28px;
+            letter-spacing: 4px;
+        }
+
+        /* ───── CONTACT ───── */
+        .contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 520px;
+        }
+        .contact-img {
+            background-image: url('https://images.unsplash.com/photo-1559305616-3f99cd43e353?w=900&q=80');
+            background-size: cover;
+            background-position: center top;
+        }
+        .contact-info {
+            background: var(--brown-dark);
+            padding: 80px 72px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 40px;
+        }
+        .contact-info .section-label { color: var(--gold); }
+        .contact-info h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 400;
+            color: #fff;
+            line-height: 1.2;
+        }
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+        .contact-detail {
+            display: flex;
+            gap: 20px;
+        }
+        .contact-icon {
+            font-size: 1.1rem;
+            margin-top: 2px;
+        }
+        .contact-detail h4 {
+            font-size: 0.72rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 6px;
+        }
+        .contact-detail p, .contact-detail a {
+            color: rgba(255,255,255,0.65);
+            font-size: 0.95rem;
+            font-weight: 300;
+            line-height: 1.6;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .contact-detail a:hover { color: var(--gold-light); }
+
+        /* ───── FOOTER ───── */
+        footer {
+            background: #0d0704;
+            padding: 40px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        footer .f-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--gold);
+        }
+        footer p {
+            color: rgba(255,255,255,0.3);
+            font-size: 0.8rem;
+        }
+        footer .f-links {
+            display: flex;
+            gap: 24px;
+        }
+        footer .f-links a {
+            color: rgba(255,255,255,0.35);
+            font-size: 0.75rem;
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        footer .f-links a:hover { color: var(--gold); }
+
+        /* ───── RESPONSIVE ───── */
+        @media (max-width: 1024px) {
+            nav, .hero-content { padding-left: 32px; padding-right: 32px; }
+            nav.scrolled { padding-left: 32px; padding-right: 32px; }
+            .menu { padding: 80px 32px; }
+            .menu-grid { grid-template-columns: repeat(2, 1fr); }
+            .testimonial, .footer { padding-left: 32px; padding-right: 32px; }
+            .intro-strip { gap: 40px; padding: 28px 32px; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero-content { padding: 0 24px 60px; }
+            .hero-content h1 { font-size: 2.6rem; }
+            .about, .process, .contact { grid-template-columns: 1fr; }
+            .about-img, .process-img, .contact-img { height: 300px; }
+            .about-text, .process-text, .contact-info { padding: 60px 32px; }
+            .menu { padding: 60px 24px; }
+            .menu-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+            .menu-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+            .gallery-row { grid-template-columns: 1fr; height: auto; }
+            .gallery-row .gal-img { height: 260px; }
+            .testimonial { padding: 60px 24px; }
+            .intro-strip { gap: 28px; padding: 24px; }
+            footer { padding: 32px 24px; flex-direction: column; text-align: center; }
+            .scroll-hint { display: none; }
+            .btn-outline { margin-left: 0; margin-top: 12px; display: block; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav id="nav">
+        <a href="#" class="nav-logo">Boutique Cafe Beans</a>
+        <ul class="nav-links">
+            <li><a href="#about">Over ons</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#process">Ons Ambacht</a></li>
+            <li><a href="#contact">Bezoek Ons</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg" id="heroBg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-eyebrow">Amsterdam · Specialty Coffee</span>
+            <h1>Elke slok<br>een <em>verhaal</em></h1>
+            <p>Ambachtelijk gebrande koffie, zorgvuldig geselecteerd van kleine boerderijen wereldwijd. Geserveerd in het hart van Amsterdam.</p>
+            <a href="#menu" class="btn-primary">Ontdek ons menu</a>
+            <a href="#contact" class="btn-outline">Bezoek ons</a>
+        </div>
+        <div class="scroll-hint">
+            <span class="scroll-line"></span>
+            Scroll
+        </div>
+    </section>
+
+    <!-- INTRO STRIP -->
+    <div class="intro-strip">
+        <div class="intro-strip-item">
+            <strong>2014</strong>
+            Opgericht
+        </div>
+        <div class="intro-strip-item">
+            <strong>12+</strong>
+            Koffieherkomsten
+        </div>
+        <div class="intro-strip-item">
+            <strong>4.9★</strong>
+            Gemiddelde beoordeling
+        </div>
+        <div class="intro-strip-item">
+            <strong>500+</strong>
+            Gasten per dag
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="about-img"></div>
+        <div class="about-text">
+            <span class="section-label">Ons Verhaal</span>
+            <h2>Passie voor koffie,<br>warmte voor mensen</h2>
+            <p>Boutique Cafe Beans ontstond uit een diepe liefde voor het verhaal achter elke boon. We reizen naar de bronnen — van de hooglanden van Ethiopië tot de valleien van Colombia — om te zorgen dat elke slok die u neemt, eerlijk, vers en uitzonderlijk is.</p>
+            <p>Ons team van gecertificeerde barista's behandelt koffie als een ambacht. Elke zetting is bewust, elke boon heeft een naam.</p>
+            <div class="divider"></div>
+            <p class="about-quote">"Koffie is geen product, het is een verbinding tussen boer, barista en gast."</p>
+        </div>
+    </section>
+
+    <!-- MENU -->
+    <section class="menu" id="menu">
+        <div class="menu-header">
+            <div>
+                <span class="section-label">Onze Specialiteiten</span>
+                <h2>Wat wij<br>serveren</h2>
+            </div>
+            <a href="#">Volledig menu →</a>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=600&q=80" alt="Latte Art" loading="lazy">
+                <div class="menu-card-overlay">
+                    <span class="menu-card-tag">Klassiek</span>
+                    <div class="menu-card-name">Flat White</div>
+                    <div class="menu-card-price">€ 3,80</div>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1534040385115-33dcb3acba5b?w=600&q=80" alt="Cappuccino" loading="lazy">
+                <div class="menu-card-overlay">
+                    <span class="menu-card-tag">Favoriet</span>
+                    <div class="menu-card-name">Cappuccino</div>
+                    <div class="menu-card-price">€ 3,50</div>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600&q=80" alt="Cold Brew" loading="lazy">
+                <div class="menu-card-overlay">
+                    <span class="menu-card-tag">Zomer Hit</span>
+                    <div class="menu-card-name">Cold Brew</div>
+                    <div class="menu-card-price">€ 4,50</div>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80" alt="Espresso" loading="lazy">
+                <div class="menu-card-overlay">
+                    <span class="menu-card-tag">Puur</span>
+                    <div class="menu-card-name">Espresso</div>
+                    <div class="menu-card-price">€ 2,80</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process" id="process">
+        <div class="process-text">
+            <span class="section-label">Van Boon tot Kopje</span>
+            <h2>Ons ambacht,<br>stap voor stap</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <span class="step-number">01</span>
+                    <div class="step-content">
+                        <h4>Selectie aan de bron</h4>
+                        <p>We bezoeken kleinschalige boerderijen en kiezen alleen bonen met traceerbaarheid en eerlijke beloning voor de teler.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <span class="step-number">02</span>
+                    <div class="step-content">
+                        <h4>Artisanaal branden</h4>
+                        <p>Onze brandmeester roostert in kleine batches op een Probat-brander, elke week vers, om maximale smaak te garanderen.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <span class="step-number">03</span>
+                    <div class="step-content">
+                        <h4>Precisie in de zetting</h4>
+                        <p>Gram voor gram, seconde voor seconde. Elke espresso wordt gezet met geijkte apparatuur en oog voor detail.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="process-img"></div>
+    </section>
+
+    <!-- GALLERY ROW -->
+    <div class="gallery-row">
+        <div class="gal-img" style="background-image: url('https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=900&q=80');"></div>
+        <div class="gal-img" style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80'); background-position: center top;"></div>
+        <div class="gal-img" style="background-image: url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=600&q=80');"></div>
+    </div>
+
+    <!-- TESTIMONIAL -->
+    <section class="testimonial">
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <blockquote>"De beste koffie van Amsterdam. Boutique Cafe Beans is niet zomaar een koffiezaak — het is een plek waar je tot rust komt en echt geniet van elk moment."</blockquote>
+        <cite>— <strong>Lena de Vries</strong>, vaste gast</cite>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <div class="contact-img"></div>
+        <div class="contact-info">
+            <div>
+                <span class="section-label">Bezoek Ons</span>
+                <h2>We heten u<br>van harte welkom</h2>
+            </div>
+            <div class="contact-details">
+                <div class="contact-detail">
+                    <span class="contact-icon">📍</span>
+                    <div>
+                        <h4>Adres</h4>
+                        <p>Koffiestraat 42<br>1017 XZ Amsterdam</p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <span class="contact-icon">🕐</span>
+                    <div>
+                        <h4>Openingstijden</h4>
+                        <p>Ma – Vr &nbsp;&nbsp;07:00 – 19:00<br>Zaterdag &nbsp;09:00 – 18:00<br>Zondag &nbsp;&nbsp;10:00 – 17:00</p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <span class="contact-icon">✉️</span>
+                    <div>
+                        <h4>Contact</h4>
+                        <p><a href="tel:+31201234567">+31 (0)20 123 4567</a><br><a href="mailto:hallo@boutiquecafebeans.nl">hallo@boutiquecafebeans.nl</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <span class="f-logo">Boutique Cafe Beans</span>
+        <p>© 2024 Boutique Cafe Beans · Amsterdam</p>
+        <div class="f-links">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">Privacy</a>
+        </div>
+    </footer>
+
+    <script>
+        // Sticky nav
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 80);
+        });
+
+        // Subtle hero parallax
+        const heroBg = document.getElementById('heroBg');
+        setTimeout(() => heroBg.classList.add('loaded'), 100);
+        window.addEventListener('scroll', () => {
+            const y = window.scrollY;
+            heroBg.style.transform = `scale(1) translateY(${y * 0.3}px)`;
+        });
+    </script>
+</body>
+</html>

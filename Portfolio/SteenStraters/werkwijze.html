@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Werkwijze | Steenstraters Bestrating</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=3">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .page-header {
+            background-color: var(--color-dark-gray);
+            padding: 6rem 0 3rem;
+            color: white;
+            text-align: center;
+        }
+
+        .process-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 5rem auto;
+        }
+
+        .process-timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--color-accent);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 4px solid var(--color-accent);
+            top: 20px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .timeline-number {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            color: rgba(200, 90, 23, 0.1);
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-weight: 700;
+        }
+
+        @media screen and (max-width: 600px) {
+            .process-timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+
+            .left::after,
+            .right::after {
+                left: 21px;
+            }
+
+            .right {
+                left: 0%;
+            }
+
+            .timeline-number {
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="Steenstraters"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="diensten.html">Diensten</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="over-ons.html">Over Ons</a></li>
+                <li><a href="werkwijze.html" class="active">Werkwijze</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container" data-aos="fade-up" data-aos-duration="1000">
+            <h1 style="font-size: 3rem; color: white;">Onze Werkwijze</h1>
+            <p style="font-size: 1.2rem;">Van het eerste contact tot de perfecte oplevering: helder en professioneel.
+            </p>
+        </div>
+    </div>
+
+    <section class="section-padding" style="background-color: var(--color-light-gray);">
+        <div class="container">
+            <div class="process-timeline">
+
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-number">01</div>
+                        <h3>1. Aanvraag</h3>
+                        <p>U neemt contact met ons op via het contactformulier, telefoon of e-mail. We plannen op korte
+                            termijn een afspraak in om uw wensen en de locatie te bespreken.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right" data-aos="fade-left">
+                    <div class="timeline-content">
+                        <div class="timeline-number">02</div>
+                        <h3>2. Advies</h3>
+                        <p>We komen vrijblijvend langs om de situatie te bekijken. We meten de oppervlaktes op en geven
+                            professioneel advies over materiaalkeuze, legverbanden en afwatering.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left" data-aos="fade-right">
+                    <div class="timeline-content">
+                        <div class="timeline-number">03</div>
+                        <h3>3. Ontwerp & Offerte</h3>
+                        <p>Op basis van ons gesprek ontvangt u een transparante offerte. Hierin staan de kosten voor
+                            materialen, arbeid en eventuele grondwerkzaamheden duidelijk gespecificeerd.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right" data-aos="fade-left">
+                    <div class="timeline-content">
+                        <div class="timeline-number">04</div>
+                        <h3>4. Uitvoering</h3>
+                        <p>Na akkoord plannen we de startdatum. Ons team werkt netjes en efficiënt. Wij verzorgen het
+                            grondwerk, de levering van materialen en natuurlijk het perfect straten.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-number">05</div>
+                        <h3>5. Oplevering</h3>
+                        <p>We lopen samen het eindresultaat na. Pas als u 100% tevreden bent met het straatwerk, ruimen
+                            we alles netjes op en is het project officieel succesvol opgeleverd.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="text-center" style="margin-top: 4rem;" data-aos="zoom-in">
+                <a href="contact.html" class="btn-primary">Spreek ons vandaag nog</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container copyright" style="border: none; padding-top: 0;">
+            <p>&copy; 2026 Steenstraters. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, offset: 100 });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
