@@ -110,27 +110,6 @@
     footerEl.outerHTML = footerHTML;
   }
 
-  // ── Scroll-to-top ────────────────────────────────────────────────────────────
-  var scrollBtn = document.createElement('button');
-  scrollBtn.setAttribute('aria-label', 'Naar boven');
-  scrollBtn.className = 'fixed bottom-24 left-6 z-50 bg-primary text-white w-11 h-11 rounded-full shadow-lg flex items-center justify-center hover:bg-accent transition-all duration-300 opacity-0 pointer-events-none';
-  scrollBtn.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>';
-  document.body.appendChild(scrollBtn);
-
-  window.addEventListener('scroll', function () {
-    if (window.scrollY > 400) {
-      scrollBtn.classList.remove('opacity-0', 'pointer-events-none');
-      scrollBtn.classList.add('opacity-100');
-    } else {
-      scrollBtn.classList.add('opacity-0', 'pointer-events-none');
-      scrollBtn.classList.remove('opacity-100');
-    }
-  });
-
-  scrollBtn.addEventListener('click', function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
   // ── WhatsApp floating button (voeg toe als nog niet aanwezig) ───────────────
   if (!document.querySelector('[aria-label="WhatsApp"]')) {
     var wa = document.createElement('a');
