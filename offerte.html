@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offerte aanvragen | BitSmid</title>
+    <meta name="description" content="Vraag gratis een offerte aan bij BitSmid. Vul het formulier in en we reageren binnen 24 uur.">
+    <meta property="og:title"       content="Offerte aanvragen | BitSmid">
+    <meta property="og:description" content="Gratis offerte voor jouw MKB-website. Binnen 24 uur reactie.">
+    <meta property="og:type"        content="website">
+        <meta property="og:image"        content="https://www.bitsmid.nl/images/og-image.jpg">
+    <meta property="og:image:width"   content="1200">
+    <meta property="og:image:height"  content="630">
+    <meta property="og:url"         content="https://www.bitsmid.nl/offerte.html">
+    <meta name="twitter:card"       content="summary_large_image">
+    <link rel="canonical"           href="https://www.bitsmid.nl/offerte.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwind-config.js"></script>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="images/favicon-180.png">
+</head>
+<body class="bg-white text-dark font-sans antialiased overflow-x-hidden pt-20">
+
+    <div id="site-header"></div>
+
+    <section class="max-w-3xl mx-auto px-4 sm:px-6 py-20">
+        <div class="text-center mb-12">
+            <h1 class="font-display text-4xl lg:text-5xl font-bold mb-4" data-aos="fade-up">Gratis offerte</h1>
+            <p class="text-lg text-gray-600">Vul in en we komen binnen 24 uur bij je terug.</p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-3xl p-8 shadow-sm text-left" data-aos="fade-up" data-aos-delay="100">
+            <form class="space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2" for="off-voornaam">Voornaam</label>
+                        <input id="off-voornaam" type="text" required class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:border-accent focus:outline-none transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2" for="off-achternaam">Achternaam</label>
+                        <input id="off-achternaam" type="text" required class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:border-accent focus:outline-none transition-colors">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2" for="off-bedrijf">Bedrijfsnaam</label>
+                    <input id="off-bedrijf" type="text" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:border-accent focus:outline-none transition-colors">
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2" for="off-email">E-mail</label>
+                        <input id="off-email" type="email" required class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:border-accent focus:outline-none transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2" for="off-tel">Telefoon</label>
+                        <input id="off-tel" type="tel" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:border-accent focus:outline-none transition-colors">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2" for="off-pakket">Gewenst pakket</label>
+                    <select id="off-pakket" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:border-accent focus:outline-none transition-colors bg-white">
+                        <option>Weet ik nog niet</option>
+                        <option>Starter (€499)</option>
+                        <option>Business (€899)</option>
+                        <option>Totaal (€1.299)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2" for="off-toelichting">Toelichting project</label>
+                    <textarea id="off-toelichting" rows="4" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:border-accent focus:outline-none transition-colors resize-none"></textarea>
+                </div>
+                <div id="offerte-feedback" class="hidden text-sm font-medium rounded-xl px-4 py-3"></div>
+                <button type="button" id="offerte-btn" class="w-full bg-accent text-white hover:bg-accentHover font-bold py-4 rounded-xl transition-colors">Ontvang offerte</button>
+            </form>
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/components.js"></script>
+    <script>
+    (function () {
+      var btn = document.getElementById('offerte-btn');
+      var feedback = document.getElementById('offerte-feedback');
+
+      function showFeedback(message, isError) {
+        feedback.textContent = message;
+        feedback.className = [
+          'text-sm font-medium rounded-xl px-4 py-3',
+          isError
+            ? 'bg-red-50 text-red-700 border border-red-200'
+            : 'bg-green-50 text-green-700 border border-green-200'
+        ].join(' ');
+      }
+
+      btn.addEventListener('click', function () {
+        var voornaam    = document.getElementById('off-voornaam').value.trim();
+        var achternaam  = document.getElementById('off-achternaam').value.trim();
+        var bedrijf     = document.getElementById('off-bedrijf').value.trim();
+        var email       = document.getElementById('off-email').value.trim();
+        var telefoon    = document.getElementById('off-tel').value.trim();
+        var pakket      = document.getElementById('off-pakket').value;
+        var toelichting = document.getElementById('off-toelichting').value.trim();
+
+        if (!voornaam || !achternaam || !email) {
+          showFeedback('Vul je voornaam, achternaam en e-mailadres in.', true);
+          return;
+        }
+
+        btn.disabled = true;
+        btn.textContent = 'Versturen\u2026';
+        feedback.className = 'hidden';
+
+        fetch('/api/offerte', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            voornaam: voornaam,
+            achternaam: achternaam,
+            bedrijf: bedrijf,
+            email: email,
+            telefoon: telefoon,
+            pakket: pakket,
+            toelichting: toelichting
+          })
+        })
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          if (data.success) {
+            showFeedback('Bedankt voor je aanvraag! We sturen je binnen 24 uur een offerte.', false);
+            ['off-voornaam','off-achternaam','off-bedrijf','off-email','off-tel','off-toelichting']
+              .forEach(function(id) { document.getElementById(id).value = ''; });
+            document.getElementById('off-pakket').selectedIndex = 0;
+            btn.textContent = 'Ontvang offerte';
+          } else {
+            showFeedback(data.error || 'Er ging iets mis. Probeer het opnieuw.', true);
+            btn.disabled = false;
+            btn.textContent = 'Ontvang offerte';
+          }
+        })
+        .catch(function () {
+          showFeedback('Netwerkfout. Controleer je verbinding en probeer opnieuw.', true);
+          btn.disabled = false;
+          btn.textContent = 'Ontvang offerte';
+        });
+      });
+    })();
+    </script>
+</body>
+</html>

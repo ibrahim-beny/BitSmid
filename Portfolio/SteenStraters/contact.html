@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Steenstraters Bestrating</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=3">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .page-header {
+            background-color: var(--color-dark-gray);
+            padding: 6rem 0 3rem;
+            color: white;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+            margin-bottom: 5rem;
+        }
+
+        .contact-info-card {
+            background-color: var(--color-light-gray);
+            padding: 3rem;
+            border-radius: 8px;
+            height: 100%;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .contact-detail i {
+            color: var(--color-accent);
+            font-size: 1.5rem;
+            margin-top: 5px;
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--color-dark-gray);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 3px rgba(200, 90, 23, 0.1);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="Steenstraters"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="diensten.html">Diensten</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="over-ons.html">Over Ons</a></li>
+                <li><a href="werkwijze.html">Werkwijze</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container" data-aos="fade-up" data-aos-duration="1000">
+            <h1 style="font-size: 3rem; color: white;">Neem Contact Op</h1>
+            <p style="font-size: 1.2rem;">Vraag direct een offerte aan of plan een vrijblijvend adviesgesprek in.</p>
+        </div>
+    </div>
+
+    <section class="section-padding">
+        <div class="container contact-grid">
+
+            <!-- Contact Details -->
+            <div data-aos="fade-right">
+                <h2>Hoe kunnen wij u helpen?</h2>
+                <p style="margin-bottom: 3rem; color: #666; font-size: 1.1rem;">Bel direct voor dringende vragen of vul
+                    het contactformulier in. Binnen 24 uur nemen wij contact met u op.</p>
+
+                <div class="contact-info-card">
+                    <div class="contact-detail">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <h4 style="margin-bottom: 5px;">Werkgebied</h4>
+                            <p style="color: #666;">Noord-Holland, Zuid-Holland, Flevoland en Utrecht. Wij opereren
+                                vanuit Amsterdam.</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <h4 style="margin-bottom: 5px;">Telefoon</h4>
+                            <p style="color: #666;">+31 (0)20 123 4567<br><small>Ma-Vr: 07:30 - 18:00</small></p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <h4 style="margin-bottom: 5px;">E-mail</h4>
+                            <p style="color: #666;">info@steenstraters.nl<br>offerte@steenstraters.nl</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div data-aos="fade-left">
+                <form class="contact-form" action="#" method="POST"
+                    onsubmit="event.preventDefault(); alert('Bedankt voor uw bericht! We nemen zo spoedig mogelijk contact op.');">
+                    <h3 style="margin-bottom: 1.5rem;">Offerte of Advies Aanvragen</h3>
+
+                    <div class="form-group">
+                        <label for="name">Volledige Naam *</label>
+                        <input type="text" id="name" class="form-control" required placeholder="Bijv. Jan de Vries">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mailadres *</label>
+                        <input type="email" id="email" class="form-control" required placeholder="uw@email.nl">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Telefoonnummer *</label>
+                        <input type="tel" id="phone" class="form-control" required placeholder="+31 6 12345678">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Type Bestrating *</label>
+                        <select id="service" class="form-control" required>
+                            <option value="">Selecteer een dienst...</option>
+                            <option value="oprit">Oprit Bestrating</option>
+                            <option value="terras">Terras Aanleg</option>
+                            <option value="tuinpaden">Tuinpaden</option>
+                            <option value="sierbestrating">Sierbestrating</option>
+                            <option value="bedrijf">Bedrijfsterrein</option>
+                            <option value="anders">Anders</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Beschrijf uw project (Optioneel)</label>
+                        <textarea id="message" class="form-control"
+                            placeholder="Hoe groot is het oppervlak? Welk materiaal wenst u? ..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary"
+                        style="width: 100%; border: none; cursor: pointer;">Verstuur Aanvraag</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container copyright" style="border: none; padding-top: 0;">
+            <p>&copy; 2026 Steenstraters. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, offset: 100 });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

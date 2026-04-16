@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc -l /Users/ibrahimben/Bitbreez2/*.html /Users/ibrahimben/Bitbreez2/*.js)",
+      "Bash(file /Users/ibrahimben/Bitbreez2/*)",
+      "Bash(grep -r \"fetch\\\\|axios\\\\|XMLHttpRequest\\\\|form\\\\|submit\" /Users/ibrahimben/Bitbreez2 --include=*.js --include=*.html)",
+      "Bash(find /Users/ibrahimben/Bitbreez2 -type f \\\\\\(-iname *.jpg -o -iname *.png -o -iname *.gif -o -iname *.svg -o -iname *.webp \\\\\\))",
+      "mcp__Claude_Preview__preview_start",
+      "WebFetch(domain:gardensun.wixsite.com)",
+      "Bash(open -a \"Google Chrome\" \"https://gardensun.wixsite.com/gardensun\")",
+      "WebSearch",
+      "Bash(git add:*)",
+      "Bash(git commit -m ':*)",
+      "Bash(git push:*)",
+      "Bash(git checkout:*)",
+      "Bash(gh pr create --title 'Add Resend email integration via Vercel serverless functions' --body ':*)",
+      "Bash(brew list:*)",
+      "Bash(awk '{print $2}')",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(d.get\\('html_url', d\\)\\)\")",
+      "Bash(/opt/homebrew/bin/gh --version)",
+      "Bash(/usr/local/bin/gh --version)",
+      "Bash(command -v gh)",
+      "Bash(git merge:*)",
+      "Bash(git pull:*)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(d, indent=2\\)\\)\")",
+      "Bash(python3 '/Users/ibrahimben/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/4957c93e-0e86-442c-b6c2-a22e2d92a315/76e2d4fb-8882-42a3-ad8c-8334dbea6558/skills/skill-creator/scripts/package_skill.py' '/Users/ibrahimben/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/4957c93e-0e86-442c-b6c2-a22e2d92a315/76e2d4fb-8882-42a3-ad8c-8334dbea6558/skills/deploy' --output '~/Downloads/deploy.skill')",
+      "Bash(python3 -m scripts.package_skill '/Users/ibrahimben/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/4957c93e-0e86-442c-b6c2-a22e2d92a315/76e2d4fb-8882-42a3-ad8c-8334dbea6558/skills/deploy' --output '~/Downloads/deploy.skill')",
+      "Bash(pip3 install:*)",
+      "Bash(git commit -m 'Add portfolio projects and contact form APIs:*)"
+    ]
+  }
+}

@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)file:///Users/ibrahimben/Hovenier/index.html -->
+<html lang="nl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Van der Linden Groenvoorziening – Hovenier in Utrecht</title>
+  <meta name="description" content="Van der Linden Groenvoorziening – uw vakkundige hovenier in Utrecht en omgeving. Tuinonderhoud, tuinaanleg, snoeiwerk en bestrating. Vraag vrijblijvend een offerte aan.">
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link href="./Van der Linden Groenvoorziening – Hovenier in Utrecht_files/css2" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-deep:   #1e3d1a;
+      --green-mid:    #2d5a27;
+      --green-light:  #4a7c42;
+      --amber:        #c8862a;
+      --amber-light:  #e8a84a;
+      --off-white:    #f5f0e8;
+      --warm-white:   #faf7f2;
+      --text-dark:    #1c1c1c;
+      --text-muted:   #5a5a4a;
+      --border:       #d6cfc0;
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body:    'Source Sans 3', 'Gill Sans', sans-serif;
+      --radius:       4px;
+      --transition:   0.3s ease;
+      --shadow:       0 2px 16px rgba(30,61,26,0.10);
+      --shadow-lg:    0 8px 40px rgba(30,61,26,0.16);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-dark);
+      background: var(--warm-white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background-color: var(--green-mid);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── HEADER ─────────────────────────────────────────── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--green-deep);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+    }
+
+    .header-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .logo-name {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.01em;
+    }
+
+    .logo-sub {
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: var(--amber-light);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: flex;
+      gap: 0.25rem;
+      align-items: center;
+    }
+
+    nav a {
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.82);
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius);
+      transition: color var(--transition), background var(--transition);
+    }
+
+    nav a:hover { color: #fff; background: rgba(255,255,255,0.1); }
+
+    .nav-cta {
+      background: var(--amber) !important;
+      color: #fff !important;
+      font-weight: 600 !important;
+      padding: 0.4rem 1rem !important;
+    }
+
+    .nav-cta:hover { background: var(--amber-light) !important; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    /* ─── HERO ───────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 60%;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        105deg,
+        rgba(18,38,14,0.82) 0%,
+        rgba(18,38,14,0.55) 55%,
+        rgba(18,38,14,0.20) 100%
+      );
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem 4rem;
+      width: 100%;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--amber-light);
+      margin-bottom: 1.1rem;
+    }
+
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.18;
+      max-width: 640px;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-sub {
+      font-size: 1.125rem;
+      color: rgba(255,255,255,0.85);
+      max-width: 500px;
+      margin-bottom: 2.25rem;
+      font-weight: 300;
+      line-height: 1.65;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.875rem 2rem;
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition);
+      border: 2px solid transparent;
+      letter-spacing: 0.02em;
+    }
+
+    .btn-amber {
+      background: var(--amber);
+      color: #fff;
+      border-color: var(--amber);
+    }
+
+    .btn-amber:hover {
+      background: var(--amber-light);
+      border-color: var(--amber-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(200,134,42,0.35);
+    }
+
+    .btn-outline-white {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255,255,255,0.55);
+    }
+
+    .btn-outline-white:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: #fff;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: bounce 2.5s infinite;
+    }
+
+    .hero-scroll svg { opacity: 0.5; }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ─── SECTIONS ───────────────────────────────────────── */
+    section { padding: 5rem 1.5rem; }
+
+    .section-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      color: var(--green-deep);
+      line-height: 1.22;
+      margin-bottom: 1rem;
+    }
+
+    .section-intro {
+      color: var(--text-muted);
+      max-width: 560px;
+      font-size: 1.05rem;
+      margin-bottom: 3rem;
+    }
+
+    /* ─── DIENSTEN ───────────────────────────────────────── */
+    #diensten { background: var(--off-white); }
+
+    .diensten-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .dienst-card {
+      background: var(--warm-white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .dienst-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .dienst-img {
+      height: 200px;
+      overflow: hidden;
+      background: var(--green-mid);
+    }
+
+    .dienst-img img { transition: transform 0.5s ease; }
+    .dienst-card:hover .dienst-img img { transform: scale(1.04); }
+
+    .dienst-body {
+      padding: 1.4rem 1.5rem 1.6rem;
+    }
+
+    .dienst-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(45,90,39,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.85rem;
+    }
+
+    .dienst-icon svg { width: 20px; height: 20px; stroke: var(--green-mid); }
+
+    .dienst-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--green-deep);
+      margin-bottom: 0.5rem;
+    }
+
+    .dienst-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ─── WERKWIJZE ──────────────────────────────────────── */
+    #werkwijze { background: var(--green-deep); }
+
+    #werkwijze .section-title { color: #fff; }
+    #werkwijze .section-intro { color: rgba(255,255,255,0.65); }
+    #werkwijze .section-label { color: var(--amber-light); }
+
+    .stappen {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      counter-reset: stap;
+    }
+
+    .stap {
+      position: relative;
+      padding: 2rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .stap::before {
+      counter-increment: stap;
+      content: "0" counter(stap);
+      font-family: var(--font-heading);
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: rgba(200,134,42,0.18);
+      position: absolute;
+      top: 1rem;
+      right: 1.25rem;
+      line-height: 1;
+    }
+
+    .stap-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: var(--amber);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+
+    .stap h3 {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: #fff;
+      margin-bottom: 0.6rem;
+    }
+
+    .stap p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.65;
+    }
+
+    /* ─── OVER ONS ───────────────────────────────────────── */
+    #over-ons { background: var(--warm-white); }
+
+    .over-ons-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .over-ons-text .section-intro { margin-bottom: 2rem; }
+
+    .over-ons-quote {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--green-mid);
+      line-height: 1.5;
+      border-left: 3px solid var(--amber);
+      padding-left: 1.25rem;
+      margin: 1.75rem 0;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 1.25rem 0.75rem;
+      background: var(--off-white);
+      border-radius: var(--radius);
+      border-bottom: 3px solid var(--amber);
+    }
+
+    .stat-num {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--green-deep);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+      line-height: 1.3;
+    }
+
+    .over-ons-image {
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      box-shadow: var(--shadow-lg);
+      background: var(--green-mid);
+    }
+
+    /* ─── GALERIJ ────────────────────────────────────────── */
+    #galerij { background: var(--off-white); }
+
+    .galerij-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 0.875rem;
+    }
+
+    .galerij-item {
+      overflow: hidden;
+      border-radius: var(--radius);
+      aspect-ratio: 4/3;
+      background: var(--green-mid);
+      cursor: pointer;
+    }
+
+    .galerij-item img {
+      transition: transform 0.5s ease;
+    }
+
+    .galerij-item:hover img { transform: scale(1.05); }
+
+    .galerij-item:first-child {
+      grid-column: span 2;
+      aspect-ratio: 16/9;
+    }
+
+    /* ─── CONTACT ────────────────────────────────────────── */
+    #contact { background: var(--green-deep); }
+
+    #contact .section-title { color: #fff; }
+    #contact .section-label { color: var(--amber-light); }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-info h3 {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      color: #fff;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-item-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(200,134,42,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .contact-item-icon svg { width: 16px; height: 16px; stroke: var(--amber-light); }
+
+    .contact-item-text {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.55;
+    }
+
+    .contact-item-text strong {
+      display: block;
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: 0.1rem;
+    }
+
+    .contact-form {
+      background: var(--warm-white);
+      border-radius: var(--radius);
+      padding: 2.25rem;
+    }
+
+    .contact-form h3 {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      color: var(--green-deep);
+      margin-bottom: 1.5rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 0.35rem;
+      letter-spacing: 0.02em;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.7rem 0.9rem;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      background: #fff;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--green-mid);
+      box-shadow: 0 0 0 3px rgba(45,90,39,0.12);
+    }
+
+    .form-group input.error,
+    .form-group textarea.error {
+      border-color: #c0392b;
+    }
+
+    .field-error {
+      font-size: 0.78rem;
+      color: #c0392b;
+      margin-top: 0.25rem;
+      display: none;
+    }
+
+    .field-error.visible { display: block; }
+
+    .form-group textarea { resize: vertical; min-height: 110px; }
+
+    .form-submit {
+      margin-top: 0.5rem;
+    }
+
+    .btn-green {
+      background: var(--green-mid);
+      color: #fff;
+      border-color: var(--green-mid);
+      width: 100%;
+      text-align: center;
+      padding: 0.9rem 2rem;
+      font-size: 1rem;
+    }
+
+    .btn-green:hover {
+      background: var(--green-deep);
+      border-color: var(--green-deep);
+      transform: translateY(-1px);
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 1.5rem;
+      background: rgba(45,90,39,0.08);
+      border-radius: var(--radius);
+      margin-top: 1rem;
+    }
+
+    .form-success svg { width: 40px; height: 40px; stroke: var(--green-mid); margin-bottom: 0.75rem; }
+    .form-success p { color: var(--green-deep); font-size: 0.95rem; }
+
+    /* ─── FOOTER ─────────────────────────────────────────── */
+    footer {
+      background: #111a0f;
+      padding: 2.5rem 1.5rem;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.82rem;
+    }
+
+    .footer-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-left .footer-logo {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 0.25rem;
+    }
+
+    .footer-kvk { font-size: 0.78rem; }
+
+    .footer-socials {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .footer-socials a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 50%;
+      color: rgba(255,255,255,0.45);
+      transition: all var(--transition);
+    }
+
+    .footer-socials a:hover {
+      border-color: var(--amber);
+      color: var(--amber);
+    }
+
+    .footer-socials svg { width: 16px; height: 16px; }
+
+    /* ─── ANIMATIONS ─────────────────────────────────────── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-up-delay-1 { transition-delay: 0.1s; }
+    .fade-up-delay-2 { transition-delay: 0.2s; }
+    .fade-up-delay-3 { transition-delay: 0.3s; }
+    .fade-up-delay-4 { transition-delay: 0.4s; }
+
+    /* ─── MOBILE NAV ─────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: var(--green-deep);
+        flex-direction: column;
+        padding: 1rem 1.5rem 1.5rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        gap: 0.25rem;
+      }
+
+      nav.open { display: flex; }
+      nav a { width: 100%; padding: 0.6rem 0.75rem; }
+      .nav-cta { text-align: center; margin-top: 0.5rem; }
+
+      header { position: relative; }
+
+      .over-ons-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+      .over-ons-image { aspect-ratio: 16/9; order: -1; }
+
+      .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+
+      .galerij-grid { grid-template-columns: repeat(2, 1fr); }
+      .galerij-item:first-child { grid-column: span 2; }
+
+      .form-row { grid-template-columns: 1fr; }
+
+      .stats { grid-template-columns: repeat(3, 1fr); }
+
+      section { padding: 3.5rem 1.25rem; }
+    }
+
+    @media (max-width: 480px) {
+      .galerij-grid { grid-template-columns: 1fr; }
+      .galerij-item:first-child { grid-column: span 1; aspect-ratio: 4/3; }
+      .stats { grid-template-columns: 1fr; max-width: 220px; margin-left: auto; margin-right: auto; }
+      .stappen { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── HEADER ──────────────────────────────────────────── -->
+<header>
+  <div class="header-inner">
+    <a href="file:///Users/ibrahimben/Hovenier/index.html#" class="logo" aria-label="Van der Linden Groenvoorziening – naar boven">
+      <span class="logo-name">Van der Linden</span>
+      <span class="logo-sub">Groenvoorziening · Utrecht</span>
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="main-nav" role="navigation" aria-label="Hoofdmenu">
+      <a href="file:///Users/ibrahimben/Hovenier/index.html#diensten" class="">Diensten</a>
+      <a href="file:///Users/ibrahimben/Hovenier/index.html#werkwijze" class="active">Werkwijze</a>
+      <a href="file:///Users/ibrahimben/Hovenier/index.html#over-ons">Over ons</a>
+      <a href="file:///Users/ibrahimben/Hovenier/index.html#galerij">Galerij</a>
+      <a href="file:///Users/ibrahimben/Hovenier/index.html#contact" class="nav-cta">Offerte aanvragen</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ─── HERO ─────────────────────────────────────────────── -->
+<section class="hero" aria-label="Introductie">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1759686674494-8a67d68f8a24?w=1600&q=80" alt="Weelderige groene tuin met tuinpad in Utrecht" loading="eager">
+  </div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <span class="hero-eyebrow">Vakkundige hovenier in Utrecht &amp; omgeving</span>
+    <h1>Uw tuin verdient<br>vakmanschap met hart</h1>
+    <p class="hero-sub">Al meer dan 25 jaar verzorgen en ontwerpen wij tuinen in Utrecht en de omliggende gemeenten. Ambachtelijk werk, persoonlijk contact, eerlijke prijs.</p>
+    <a href="file:///Users/ibrahimben/Hovenier/index.html#contact" class="btn btn-amber">Vraag een gratis offerte aan</a>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+  </div>
+</section>
+
+<!-- ─── DIENSTEN ──────────────────────────────────────────── -->
+<section id="diensten" aria-labelledby="diensten-title">
+  <div class="section-inner">
+    <span class="section-label fade-up visible">Wat wij doen</span>
+    <h2 class="section-title fade-up visible" id="diensten-title">Onze diensten</h2>
+    <p class="section-intro fade-up visible">Van een nieuw tuinontwerp tot regelmatig onderhoud — wij ontzorgen u van A tot Z. Altijd met aandacht voor uw wensen en het karakter van uw tuin.</p>
+
+    <div class="diensten-grid">
+
+      <article class="dienst-card fade-up fade-up-delay-1 visible">
+        <div class="dienst-img">
+          <img src="https://images.unsplash.com/photo-1689728222087-6984f72460c4?w=800&q=80" alt="Hovenier aan het werk met grasmaaier in groene tuin" loading="lazy">
+        </div>
+        <div class="dienst-body">
+          <div class="dienst-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c0-4.97 4.03-9 9-9s9 4.03 9 9-4.03 9-9 9-9-4.03-9-9z"></path><path d="M12 8v4l3 3"></path></svg>
+          </div>
+          <h3>Tuinonderhoud</h3>
+          <p>Regelmatig maaien, snoeien, onkruid verwijderen en borders bijhouden. Wij zorgen dat uw tuin er het hele jaar door verzorgd bij staat.</p>
+        </div>
+      </article>
+
+      <article class="dienst-card fade-up fade-up-delay-2 visible">
+        <div class="dienst-img">
+          <img src="https://images.unsplash.com/photo-1724643110858-8ffacc4ae144?w=800&q=80" alt="Tuinaanleg – weelderige kleurrijke bloementuin in volle bloei" loading="lazy">
+        </div>
+        <div class="dienst-body">
+          <div class="dienst-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18M9 21V9"></path></svg>
+          </div>
+          <h3>Tuinaanleg</h3>
+          <p>Van schets tot oplevering. Wij ontwerpen en leggen aan: borders, gazons, paden, vijvers en terrassen — op maat voor uw situatie.</p>
+        </div>
+      </article>
+
+      <article class="dienst-card fade-up fade-up-delay-3 visible">
+        <div class="dienst-img">
+          <img src="https://images.unsplash.com/photo-1774579893308-ec777199ce32?w=800&q=80" alt="Snoeiwerk – hovenier snijdt heg vakkundig bij met heggenschaar" loading="lazy">
+        </div>
+        <div class="dienst-body">
+          <div class="dienst-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v18M18 3v18M3 12h18"></path></svg>
+          </div>
+          <h3>Snoeiwerk</h3>
+          <p>Heesters, hagen, fruitbomen en sierbomen: wij snoeien op het juiste moment en op de juiste manier voor een gezonde en mooie groei.</p>
+        </div>
+      </article>
+
+      <article class="dienst-card fade-up fade-up-delay-4 visible">
+        <div class="dienst-img">
+          <img src="https://images.unsplash.com/photo-1761637822930-fb1c1a3df94d?w=800&q=80" alt="Bestrating – nieuw gelegde tegels en klinkers in de tuin" loading="lazy">
+        </div>
+        <div class="dienst-body">
+          <div class="dienst-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1"></rect><rect x="13" y="3" width="8" height="8" rx="1"></rect><rect x="3" y="13" width="8" height="8" rx="1"></rect><rect x="13" y="13" width="8" height="8" rx="1"></rect></svg>
+          </div>
+          <h3>Bestrating</h3>
+          <p>Opritten, terrassen en tuinpaden in tegels, klinkers of natuursteen. Strak werk, goede fundering, duurzaam resultaat.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── WERKWIJZE ─────────────────────────────────────────── -->
+<section id="werkwijze" aria-labelledby="werkwijze-title">
+  <div class="section-inner">
+    <span class="section-label fade-up visible">Hoe wij werken</span>
+    <h2 class="section-title fade-up visible" id="werkwijze-title">Van wens naar werkelijkheid</h2>
+    <p class="section-intro fade-up visible">Geen verrassingen, geen onduidelijkheid. Wij werken stap voor stap en houden u op de hoogte.</p>
+
+    <div class="stappen">
+      <div class="stap fade-up fade-up-delay-1">
+        <div class="stap-num">1</div>
+        <h3>Kennismaking</h3>
+        <p>We komen bij u langs voor een vrijblijvend gesprek. U vertelt ons wat u wilt en wat er leeft in uw tuin. Wij kijken mee en stellen de juiste vragen.</p>
+      </div>
+      <div class="stap fade-up fade-up-delay-2">
+        <div class="stap-num">2</div>
+        <h3>Plan &amp; Offerte</h3>
+        <p>Op basis van de kennismaking stellen wij een helder plan op met een overzichtelijke offerte. Geen vage bedragen — wat erin staat, klopt.</p>
+      </div>
+      <div class="stap fade-up fade-up-delay-3">
+        <div class="stap-num">3</div>
+        <h3>Uitvoering</h3>
+        <p>Ons team gaat aan de slag op het afgesproken moment. We werken netjes, ruimen alles op en laten u een tuin achter waar u trots op kunt zijn.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── OVER ONS ──────────────────────────────────────────── -->
+<section id="over-ons" aria-labelledby="over-ons-title">
+  <div class="section-inner">
+    <div class="over-ons-layout">
+      <div class="over-ons-text">
+        <span class="section-label fade-up">Over ons</span>
+        <h2 class="section-title fade-up" id="over-ons-title">Een familiebedrijf met wortels in Utrecht</h2>
+        <p class="section-intro fade-up">Van der Linden Groenvoorziening is in 1999 opgericht door Hendrik van der Linden. Wat begon als eenmanszaak in Tuindorp is uitgegroeid tot een team van acht vakkundige medewerkers — maar de nuchterheid en het persoonlijk contact zijn nooit veranderd.</p>
+        <blockquote class="over-ons-quote fade-up">"Een mooie tuin begint met luisteren. Naar wat de klant wil, maar ook naar wat de grond en het groen zeggen."<br><cite style="font-size:0.85rem;font-style:normal;color:var(--text-muted);display:block;margin-top:0.5rem;">— Hendrik van der Linden, oprichter</cite></blockquote>
+        <p class="fade-up" style="color:var(--text-muted);font-size:0.95rem;">Wij werken in Utrecht, Nieuwegein, IJsselstein, Houten, De Bilt en omgeving. Geen uitbesteding — eigen mensen, eigen verantwoordelijkheid.</p>
+        <div class="stats fade-up">
+          <div class="stat">
+            <div class="stat-num">25+</div>
+            <div class="stat-label">Jaar actief</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">1.200+</div>
+            <div class="stat-label">Projecten afgerond</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">97%</div>
+            <div class="stat-label">Tevreden klanten</div>
+          </div>
+        </div>
+      </div>
+      <div class="over-ons-image fade-up">
+        <img src="images/ngHnAXs_5eE.jpg" alt="Hovenier aan het werk in een Utrechtse achtertuin" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── GALERIJ ───────────────────────────────────────────── -->
+<section id="galerij" aria-labelledby="galerij-title">
+  <div class="section-inner">
+    <span class="section-label fade-up">Ons werk</span>
+    <h2 class="section-title fade-up" id="galerij-title">Tuinen die we met trots lieten</h2>
+    <p class="section-intro fade-up">Een kleine impressie van projecten die wij de afgelopen jaren hebben mogen uitvoeren in Utrecht en omgeving.</p>
+
+    <div class="galerij-grid fade-up">
+      <div class="galerij-item">
+        <img src="https://images.unsplash.com/photo-1657736508697-4f0bfa8f1b47?w=1000&q=80" alt="Volledig nieuw aangelegde tuin in Utrecht Noord" loading="lazy">
+      </div>
+      <div class="galerij-item">
+        <img src="images/zvEqjbA42mE.jpg" alt="Tuinteam aan het werk bij een Utrechts tuinproject" loading="lazy">
+      </div>
+      <div class="galerij-item">
+        <img src="images/DumoWMxFTIY.jpg" alt="Kleurrijke borders langs een Utrechtse achtertuin" loading="lazy">
+      </div>
+      <div class="galerij-item">
+        <img src="images/GaFVo5A4FMU.jpg" alt="Strak gesnoeid heg bij een woonwijk in Houten" loading="lazy">
+      </div>
+      <div class="galerij-item">
+        <img src="https://images.unsplash.com/photo-1774276985074-d2354e2f0c64?w=1000&q=80" alt="Aangelegd vijvertje met waterplanten in een Nieuwegeinse tuin" loading="lazy">
+      </div>
+      <div class="galerij-item">
+        <img src="https://images.unsplash.com/photo-1526392587392-d1627b6c134a?w=1000&q=80" alt="Fris gemaaid gazon in het voorjaar, De Bilt" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ───────────────────────────────────────────── -->
+<section id="contact" aria-labelledby="contact-title">
+  <div class="section-inner">
+    <div class="contact-layout">
+
+      <div class="contact-info fade-up">
+        <span class="section-label">Neem contact op</span>
+        <h2 class="section-title" id="contact-title" style="color:#fff;">Klaar voor een mooiere tuin?</h2>
+        <p style="color:rgba(255,255,255,0.65);margin-bottom:2rem;font-size:0.95rem;">Stuur ons een bericht of bel direct. Wij reageren binnen één werkdag en komen graag vrijblijvend bij u langs.</p>
+
+        <div class="contact-item">
+          <div class="contact-item-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </div>
+          <div class="contact-item-text">
+            <strong>Adres</strong>
+            Molenpad 14<br>3511 BH Utrecht
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-item-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .9h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
+          </div>
+          <div class="contact-item-text">
+            <strong>Telefoon</strong>
+            <a href="tel:+31302190045" style="color:rgba(255,255,255,0.75);">030 – 219 00 45</a><br>
+            Maandag t/m vrijdag 07:30–17:30
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-item-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </div>
+          <div class="contact-item-text">
+            <strong>E-mail</strong>
+            <a href="mailto:info@vanderlinden-groen.nl" style="color:rgba(255,255,255,0.75);">info@vanderlinden-groen.nl</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-item-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="contact-item-text">
+            <strong>Werkgebied</strong>
+            Utrecht · Nieuwegein · Houten<br>IJsselstein · De Bilt · Zeist
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form fade-up fade-up-delay-1" role="complementary" aria-label="Offerte aanvragen formulier">
+        <h3>Stuur ons een bericht</h3>
+        <form id="contact-form" novalidate="">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="naam">Naam <span aria-hidden="true" style="color:#c0392b">*</span></label>
+              <input type="text" id="naam" name="naam" placeholder="Jan de Vries" autocomplete="name">
+              <div class="field-error" id="naam-error" role="alert">Vul uw naam in.</div>
+            </div>
+            <div class="form-group">
+              <label for="telefoon">Telefoonnummer</label>
+              <input type="tel" id="telefoon" name="telefoon" placeholder="06 12 34 56 78" autocomplete="tel">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">E-mailadres <span aria-hidden="true" style="color:#c0392b">*</span></label>
+            <input type="email" id="email" name="email" placeholder="jan@voorbeeld.nl" autocomplete="email">
+            <div class="field-error" id="email-error" role="alert">Vul een geldig e-mailadres in.</div>
+          </div>
+          <div class="form-group">
+            <label for="dienst">Gewenste dienst</label>
+            <select id="dienst" name="dienst">
+              <option value="">— Maak een keuze —</option>
+              <option>Tuinonderhoud</option>
+              <option>Tuinaanleg</option>
+              <option>Snoeiwerk</option>
+              <option>Bestrating</option>
+              <option>Anders / Combinatie</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="bericht">Uw bericht <span aria-hidden="true" style="color:#c0392b">*</span></label>
+            <textarea id="bericht" name="bericht" placeholder="Omschrijf kort wat u zoekt — dan kunnen wij u gelijk goed helpen…"></textarea>
+            <div class="field-error" id="bericht-error" role="alert">Schrijf een kort bericht.</div>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn btn-green">Offerte aanvragen →</button>
+          </div>
+          <div class="form-success" id="form-success" role="status" aria-live="polite">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="9 12 11 14 15 10"></polyline></svg>
+            <p><strong>Bedankt voor uw bericht!</strong><br>Wij nemen binnen één werkdag contact met u op.</p>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-logo">Van der Linden Groenvoorziening</div>
+      <div>© 2025 · KVK-nummer: 30248761 · Alle rechten voorbehouden</div>
+    </div>
+
+    <div class="footer-socials" aria-label="Sociale media">
+      <a href="file:///Users/ibrahimben/Hovenier/index.html#" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg>
+      </a>
+      <a href="file:///Users/ibrahimben/Hovenier/index.html#" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+      </a>
+      <a href="file:///Users/ibrahimben/Hovenier/index.html#" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Hamburger menu ──────────────────────────────────────
+  const hamburger = document.getElementById('hamburger');
+  const mainNav   = document.getElementById('main-nav');
+
+  hamburger.addEventListener('click', () => {
+    const open = mainNav.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', String(open));
+  });
+
+  mainNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mainNav.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // ── Intersection Observer – fade-up ─────────────────────
+  const observer = new IntersectionObserver(
+    entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+  );
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // ── Image error fallback (green block) ──────────────────
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('error', function () {
+      this.style.display = 'none';
+      const wrapper = this.closest('.dienst-img, .galerij-item, .over-ons-image, .hero-bg');
+      if (wrapper) wrapper.style.background = '#2d5a27';
+    });
+  });
+
+  // ── Contact form validation ──────────────────────────────
+  const form = document.getElementById('contact-form');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    let valid = true;
+
+    const fields = [
+      { id: 'naam',    errorId: 'naam-error',    check: v => v.trim().length >= 2 },
+      { id: 'email',   errorId: 'email-error',   check: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) },
+      { id: 'bericht', errorId: 'bericht-error', check: v => v.trim().length >= 5 },
+    ];
+
+    fields.forEach(({ id, errorId, check }) => {
+      const input = document.getElementById(id);
+      const error = document.getElementById(errorId);
+      const ok    = check(input.value);
+      input.classList.toggle('error', !ok);
+      error.classList.toggle('visible', !ok);
+      if (!ok) valid = false;
+    });
+
+    if (valid) {
+      form.style.display = 'none';
+      const success = document.getElementById('form-success');
+      success.style.display = 'block';
+    }
+  });
+
+  // Clear error state on input
+  ['naam', 'email', 'bericht'].forEach(id => {
+    const input = document.getElementById(id);
+    input.addEventListener('input', () => {
+      input.classList.remove('error');
+      document.getElementById(id + '-error').classList.remove('visible');
+    });
+  });
+
+  // ── Active nav on scroll ─────────────────────────────────
+  const sections  = document.querySelectorAll('section[id]');
+  const navLinks  = document.querySelectorAll('nav a[href^="#"]');
+
+  const navObserver = new IntersectionObserver(
+    entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          navLinks.forEach(a => a.classList.remove('active'));
+          const active = document.querySelector(`nav a[href="#${e.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    },
+    { threshold: 0.45 }
+  );
+
+  sections.forEach(s => navObserver.observe(s));
+</script>
+
+
+</body></html>
